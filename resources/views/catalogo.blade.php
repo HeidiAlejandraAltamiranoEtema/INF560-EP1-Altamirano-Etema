@@ -8,13 +8,11 @@
         @forelse ($libros as $libro)
             <div class="bg-white rounded-xl shadow-md overflow-hidden border border-slate-200 flex flex-col justify-between hover:shadow-lg transition">
                 <div>
-                    <!-- Portada dinámica con gradiente -->
                     <div class="h-44 bg-gradient-to-br {{ $libro['portada'] }} flex items-center justify-center p-4 relative">
                         <span class="text-white text-xl font-bold text-center drop-shadow">
                             {{ $libro['titulo'] }}
                         </span>
                         
-                        <!-- Badge de Destacado si aplica -->
                         @if ($libro['destacado'])
                             <span class="absolute top-3 right-3 bg-amber-400 text-slate-950 font-bold text-xs px-2 py-0.5 rounded shadow">
                                 ★ Destacado
@@ -39,7 +37,6 @@
                             Por <span class="font-medium text-slate-800">{{ $libro['autor'] }}</span>
                         </p>
 
-                        <!-- Control de Stock (Directiva Blade @if) -->
                         <div class="mb-2">
                             @if ($libro['stock'] > 0)
                                 <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-md">
@@ -56,7 +53,6 @@
                     </div>
                 </div>
 
-                <!-- Footer de la tarjeta -->
                 <div class="px-5 pb-5 pt-3 flex items-center justify-between border-t border-slate-100 mt-auto bg-slate-50/50">
                     <div>
                         <span class="text-xs text-slate-500 block">Precio</span>
